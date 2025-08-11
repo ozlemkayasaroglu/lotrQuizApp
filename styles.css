@@ -840,14 +840,19 @@ body {
     }
     
     .stats-container {
-        flex-direction: column;
-        gap: 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+    
+    .stat-item {
+        flex: 1;
+        min-width: 80px;
+        max-width: 120px;
     }
     
     .stat-divider {
-        width: 100%;
-        height: 1px;
-        margin: 0;
+        display: none;
     }
     
     .quiz-header {
@@ -898,6 +903,26 @@ body {
     
     .option-content {
         padding: 15px;
+    }
+    
+    .stats-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 15px;
+    }
+    
+    .stat-item {
+        flex: none;
+        min-width: auto;
+        max-width: none;
+    }
+    
+    .stat-divider {
+        display: block;
+        width: 50%;
+        height: 1px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.1);
     }
     
     .footer {
