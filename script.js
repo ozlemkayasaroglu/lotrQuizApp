@@ -223,6 +223,7 @@ let currentQuiz = {
 const STORAGE_KEYS = {
   QUIZ_HISTORY: "lotr_quiz_history",
   QUIZ_STATS: "lotr_quiz_stats",
+  TOTAL_USERS: "lotr_total_users",
 };
 
 // Initialize App
@@ -275,6 +276,12 @@ function saveQuizAttempt(score, totalQuestions, duration) {
   };
 
   const history = getQuizHistory();
+  
+  // İlk quiz ise kullanıcı sayısını artır
+  if (history.length === 0) {
+    incrementTotalUsers();
+  }
+  
   history.unshift(attempt);
 
   // Keep only last 50 attempts
@@ -344,6 +351,25 @@ function clearQuizHistory() {
   }
 }
 
+function incrementTotalUsers() {
+  try {
+    const currentUsers = getTotalUsers();
+    localStorage.setItem(STORAGE_KEYS.TOTAL_USERS, (currentUsers + 1).toString());
+  } catch (error) {
+    console.error("Error incrementing total users:", error);
+  }
+}
+
+function getTotalUsers() {
+  try {
+    const totalUsers = localStorage.getItem(STORAGE_KEYS.TOTAL_USERS);
+    return totalUsers ? parseInt(totalUsers, 10) : 0;
+  } catch (error) {
+    console.error("Error getting total users:", error);
+    return 0;
+  }
+}
+
 function formatDate(dateString) {
   const date = new Date(dateString);
   const now = new Date();
@@ -376,6 +402,7 @@ function updateStatsDisplay(stats = null) {
     stats = getQuizStats();
   }
 
+  document.getElementById("totalUsers").textContent = getTotalUsers();
   document.getElementById("totalAttempts").textContent = stats.totalAttempts;
   document.getElementById("bestScore").textContent = stats.bestScore
     ? `${stats.bestScore.percentage}%`
