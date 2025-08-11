@@ -315,28 +315,57 @@ body {
 
 /* Footer */
 .footer {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px 20px 20px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
 }
 
 .footer-text {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #D4AF37;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-text .ring-emoji {
+    display: inline-block;
+    animation: ringPulse 3s ease-in-out infinite;
+    margin-left: 8px;
+    font-size: 1.2em;
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+}
+
+@keyframes ringPulse {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg);
+        filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+    }
+    25% { 
+        transform: scale(1.1) rotate(5deg);
+        filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));
+    }
+    50% { 
+        transform: scale(1.15) rotate(0deg);
+        filter: drop-shadow(0 0 20px rgba(212, 175, 55, 1));
+    }
+    75% { 
+        transform: scale(1.1) rotate(-5deg);
+        filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));
+    }
 }
 
 .footer-sub-text {
     font-size: 0.9rem;
     color: #B0B0B0;
+    line-height: 1.4;
 }
 
 .footer-sub-text a {
@@ -860,10 +889,12 @@ body {
     }
     
     .footer {
-        bottom: 10px;
-        left: 10px;
-        right: 10px;
-        padding: 15px;
+        margin-top: 20px;
+        padding: 20px 15px 15px 15px;
+    }
+    
+    .footer-text {
+        font-size: 1rem;
     }
 }
 
