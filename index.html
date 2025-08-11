@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Lord of the Rings Quiz - Orta Dünya'daki bilginizi test edin!"
+    />
+    <meta
+      name="keywords"
+      content="lord of the rings, quiz, test, orta dünya, hobbit, gandalf, bilgi yarışması"
+    />
+    <meta name="author" content="LOTR Quiz App" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="🧙‍♂️ Lord of the Rings Quiz" />
+    <meta
+      property="og:description"
+      content="Lord of the Rings evrenindeki bilginizi test edin! Orta Dünya'nın en derin köşelerinden sorular sizi bekliyor."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="🧙‍♂️ Lord of the Rings Quiz" />
+    <meta
+      name="twitter:description"
+      content="Lord of the Rings evrenindeki bilginizi test edin!"
+    />
+
+    <title>🧙‍♂️ Lord of the Rings Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧙‍♂️</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- Background Stars -->
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Background Decorative Elements -->
+      <div class="background-decor">
+        <div class="decor-element" style="top: 10%; left: 10%">🍃</div>
+        <div class="decor-element" style="top: 15%; right: 15%">⚔️</div>
+        <div class="decor-element" style="top: 70%; left: 5%">🏔️</div>
+        <div class="decor-element" style="bottom: 20%; right: 10%">✨</div>
+      </div>
+
+      <!-- Header -->
+      <div class="header fade-in">
+        <div class="title-container">
+          <span class="star-icon">🧙‍♂️</span>
+          <h1 class="title">Lord of the Rings Quiz</h1>
+        </div>
+        <p class="subtitle">Orta Dünya'nın En Derin Sırları</p>
+      </div>
+
+      <!-- Content -->
+      <div class="content fade-in">
+        <div class="description-card">
+          <p class="description">
+            Bir zamanlar Orta Dünya'da... Lord of the Rings evrenindeki
+            bilginizi test etmeye hazır mısınız?
+          </p>
+          <p class="description-sub">
+            Yüzük bilginizi sınayın ve Orta Dünya puanınızı öğrenin!
+          </p>
+        </div>
+
+        <!-- Start Button -->
+        <!-- Difficulty Selection -->
+        <div class="difficulty-selection fade-in">
+          <h3 class="difficulty-title">Zorluk Seviyesi Seç</h3>
+          <div class="difficulty-buttons">
+            <button class="difficulty-button easy" onclick="startQuiz('easy')">
+              <span class="difficulty-icon">🍃</span>
+              <span class="difficulty-name">Hobbit</span>
+              <span class="difficulty-desc">Temel sorular</span>
+            </button>
+            <button class="difficulty-button hard" onclick="startQuiz('hard')">
+              <span class="difficulty-icon">⚔️</span>
+              <span class="difficulty-name">Ranger</span>
+              <span class="difficulty-desc">Uzman soruları</span>
+            </button>
+            <button
+              class="difficulty-button mixed"
+              onclick="startQuiz('mixed')"
+            >
+              <span class="difficulty-icon">🧙‍♂️</span>
+              <span class="difficulty-name">Wizard</span>
+              <span class="difficulty-desc">Karışık sorular</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Start Button -->
+        <button class="start-button" onclick="startQuiz('mixed')">
+          <span class="button-gradient">🏔️ Rastgele Quiz'e Başla</span>
+        </button>
+
+        <!-- History Button -->
+        <button
+          class="history-button"
+          onclick="showHistory()"
+          id="historyButton"
+          style="display: none"
+        >
+          <span id="historyButtonText">📊 Geçmiş (0)</span>
+        </button>
+
+        <!-- Stats Container -->
+        <div class="stats-container" id="statsContainer">
+          <div class="stat-item">
+            <div class="stat-number" id="totalAttempts">0</div>
+            <div class="stat-label">Deneme</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-number" id="bestScore">-</div>
+            <div class="stat-label">En İyi</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-number" id="averageScore">-</div>
+            <div class="stat-label">Ortalama</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p class="footer-text">One Ring to rule them all! 💍</p>
+        <p class="footer-sub-text">
+          Developed with ❤️ by <a href="https://twitter.com/mommy__ai" target="_blank">@mommy__ai</a> and GitHub Copilot for LOTR fans
+        </p>
+      </div>
+    </div>
+
+    <!-- Quiz Container (Hidden initially) -->
+    <div class="quiz-container" id="quizContainer" style="display: none">
+      <!-- Quiz content will be dynamically loaded here -->
+    </div>
+
+    <!-- Results Container (Hidden initially) -->
+    <div class="results-container" id="resultsContainer" style="display: none">
+      <!-- Results content will be dynamically loaded here -->
+    </div>
+
+    <!-- History Container (Hidden initially) -->
+    <div class="history-container" id="historyContainer" style="display: none">
+      <!-- History content will be dynamically loaded here -->
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
