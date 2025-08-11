@@ -990,7 +990,7 @@ function shareOnTwitter(percentage, character, difficulty) {
 
   const text = `Lord of the Rings Quiz'de %${percentage} puan aldım! Benim karakterim: ${character} 🧙‍♂️ ${
     difficultyText[difficulty] || "Wizard"
-  } seviyesinde! Sen de dene:`;
+  } seviyesinde! Sen de dene: @mommy__ai`;
   const url = window.location.href;
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     text
@@ -1008,7 +1008,7 @@ function copyResultToClipboard(percentage, character, difficulty) {
 
   const text = `Lord of the Rings Quiz'de %${percentage} puan aldım! Benim karakterim: ${character} 🧙‍♂️ ${
     difficultyText[difficulty] || "Wizard"
-  } seviyesinde! Sen de dene: ${window.location.href}`;
+  } seviyesinde! Sen de dene: ${window.location.href} @mommy__ai`;
 
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard
