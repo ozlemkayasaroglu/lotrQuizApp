@@ -273,6 +273,18 @@ body {
     font-weight: 600;
 }
 
+/* Countdown Styles */
+#countdown {
+    color: #D4AF37;
+    font-weight: 700;
+    animation: countdownPulse 1s ease-in-out infinite;
+}
+
+@keyframes countdownPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
 /* Stats Container */
 .stats-container {
     display: flex;
