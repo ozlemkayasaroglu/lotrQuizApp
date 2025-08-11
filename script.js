@@ -1,212 +1,333 @@
 // Lord of the Rings Quiz JavaScript
 
-// Quiz Data - Kategorize edilmiş sorular
+// Quiz Data - 3 Seviye Kategorize Edilmiş Sorular
 
-// Basit Seviye Sorular (Yeni başlayanlar için)
+// 🌿 KOLAY SEVİYE (15 Soru) - Film izleyicileri için
 const easyQuestions = [
   {
-    question: "Frodo Baggins hangi ırktan gelir?",
-    options: ["Elf", "İnsan", "Hobbit", "Cüce"],
+    question: "Yüzük Kardeşliği'nin kaç üyesi vardır?",
+    options: ["7", "8", "9", "10"],
+    correct: 2,
+    category: "Temel Bilgiler",
+    difficulty: "easy",
+  },
+  {
+    question: "Frodo'nun taşıdığı yüzük nedir?",
+    options: ["Nenya", "Vilya", "Tek Yüzük", "Barahir'in Yüzüğü"],
+    correct: 2,
+    category: "Eşyalar",
+    difficulty: "easy",
+  },
+  {
+    question: "Gandalf'ın beyaz formuna ne denir?",
+    options: ["Gandalf the Grey", "Saruman", "Gandalf the White", "Radagast"],
     correct: 2,
     category: "Karakterler",
     difficulty: "easy",
   },
   {
-    question: "Tek Yüzük'ü kim yaratmıştır?",
-    options: ["Gandalf", "Sauron", "Elrond", "Galadriel"],
+    question: "Hobbitlerin yaşadığı bölge?",
+    options: ["Rohan", "Mordor", "Shire", "Gondor"],
+    correct: 2,
+    category: "Coğrafya",
+    difficulty: "easy",
+  },
+  {
+    question: "Legolas hangi ırktandır?",
+    options: ["İnsan", "Hobbit", "Cüce", "Elf"],
+    correct: 3,
+    category: "Irklar",
+    difficulty: "easy",
+  },
+  {
+    question: "Gollum'un orijinal adı nedir?",
+    options: ["Déagol", "Sméagol", "Bilbo", "Frodo"],
     correct: 1,
+    category: "Karakterler",
+    difficulty: "easy",
+  },
+  {
+    question: "Frodo'nun kılıcının adı?",
+    options: ["Glamdring", "Andúril", "Sting", "Narsil"],
+    correct: 2,
     category: "Eşyalar",
     difficulty: "easy",
   },
   {
+    question: "Rohan'ın başkenti neresidir?",
+    options: ["Minas Tirith", "Edoras", "Helm's Deep", "Isengard"],
+    correct: 1,
+    category: "Coğrafya",
+    difficulty: "easy",
+  },
+  {
+    question: "Yüzüklerin Efendisi'nin yazarı kimdir?",
+    options: ["C.S. Lewis", "J.R.R. Tolkien", "George R.R. Martin", "Terry Pratchett"],
+    correct: 1,
+    category: "Genel",
+    difficulty: "easy",
+  },
+  {
+    question: "Samwise Gamgee'nin mesleği nedir?",
+    options: ["Demirci", "Bahçıvan", "Şef", "Muhafız"],
+    correct: 1,
+    category: "Karakterler",
+    difficulty: "easy",
+  },
+  {
+    question: "Bilbo'nun 111. doğumgünü partisi nerede yapılır?",
+    options: ["Bag End", "Green Dragon", "Prancing Pony", "Rivendell"],
+    correct: 0,
+    category: "Olaylar",
+    difficulty: "easy",
+  },
+  {
     question: "Gandalf'ın atının adı nedir?",
-    options: ["Roach", "Shadowfax", "Bucephalus", "Pegasus"],
+    options: ["Brego", "Shadowfax", "Arod", "Hasufel"],
     correct: 1,
     category: "Hayvanlar",
     difficulty: "easy",
   },
   {
-    question: "Aragorn'un gerçek adı nedir?",
-    options: ["Isildur", "Elendil", "Elessar", "Boromir"],
-    correct: 2,
-    category: "Karakterler",
-    difficulty: "easy",
-  },
-  {
-    question: "Hobbiton hangi bölgede yer alır?",
-    options: ["Rohan", "Gondor", "Shire", "Rivendell"],
-    correct: 2,
-    category: "Yerler",
-    difficulty: "easy",
-  },
-  {
-    question: "Legolas hangi ırktan gelir?",
-    options: ["İnsan", "Hobbit", "Cüce", "Elf"],
-    correct: 3,
-    category: "Karakterler",
-    difficulty: "easy",
-  },
-  {
-    question: "Yüzüklerin Efendisi'nin yazarı kimdir?",
-    options: [
-      "C.S. Lewis",
-      "J.R.R. Tolkien",
-      "George R.R. Martin",
-      "Terry Pratchett",
-    ],
-    correct: 1,
-    category: "Genel Bilgi",
-    difficulty: "easy",
-  },
-  {
-    question: "Gimli hangi ırktan gelir?",
+    question: "Gimli hangi ırktandır?",
     options: ["Elf", "İnsan", "Hobbit", "Cüce"],
     correct: 3,
-    category: "Karakterler",
+    category: "Irklar",
     difficulty: "easy",
   },
   {
-    question: "Mount Doom hangi dilde Amon Amarth olarak bilinir?",
-    options: ["Quenya", "Sindarin", "Rohirric", "Westron"],
+    question: "Mount Doom'un diğer adı nedir?",
+    options: ["Orodruin", "Erebor", "Caradhras", "Morgai"],
+    correct: 0,
+    category: "Coğrafya",
+    difficulty: "easy",
+  },
+  {
+    question: "Saruman'ın kulesinin adı nedir?",
+    options: ["Barad-dûr", "Orthanc", "Minas Morgul", "Cirith Ungol"],
     correct: 1,
-    category: "Diller",
-    difficulty: "easy",
-  },
-  {
-    question: "Kardeşlik kaç üyeden oluşur?",
-    options: ["7", "8", "9", "10"],
-    correct: 2,
-    category: "Gruplar",
+    category: "Yerler",
     difficulty: "easy",
   },
 ];
 
-// Zor Seviye Sorular (Uzmanlar için)
+// 🏰 ORTA SEVİYE (15 Soru) - Kitap okuyucuları için
+const mediumQuestions = [
+  {
+    question: "Aragorn'un Andúril kılıcının önceki adı nedir?",
+    options: ["Glamdring", "Narsil", "Orcrist", "Gurthang"],
+    correct: 1,
+    category: "Eşyalar",
+    difficulty: "medium",
+  },
+  {
+    question: "Galadriel'in Frodo'ya verdiği armağan nedir?",
+    options: ["Mithril zırh", "Phial of Galadriel", "Elf kılıcı", "Büyülü yüzük"],
+    correct: 1,
+    category: "Eşyalar",
+    difficulty: "medium",
+  },
+  {
+    question: "Theoden'in kılıcının adı nedir?",
+    options: ["Herugrim", "Gurthang", "Orcrist", "Anglachel"],
+    correct: 0,
+    category: "Eşyalar",
+    difficulty: "medium",
+  },
+  {
+    question: "Moria kapısındaki yazı hangi dildedir?",
+    options: ["Sindarin", "Khuzdul", "Quenya", "Black Speech"],
+    correct: 0,
+    category: "Diller",
+    difficulty: "medium",
+  },
+  {
+    question: "Shelob hangi tür yaratıktır?",
+    options: ["Balrog", "Ejderha", "Dev örümcek", "Nazgûl"],
+    correct: 2,
+    category: "Yaratıklar",
+    difficulty: "medium",
+  },
+  {
+    question: "Aragorn'un tahta çıkışında aldığı isim nedir?",
+    options: ["Telcontar", "Elessar", "Thorongil", "Estel"],
+    correct: 1,
+    category: "Karakterler",
+    difficulty: "medium",
+  },
+  {
+    question: "Denethor'un ölüm şekli nedir?",
+    options: ["Savaşta öldü", "Kendini yaktı", "Nazgûl tarafından öldürüldü", "Yaşlılıktan öldü"],
+    correct: 1,
+    category: "Karakterler",
+    difficulty: "medium",
+  },
+  {
+    question: "Balin'in Moria'daki mezarında ne yazar?",
+    options: ["Balin Sonuncu", "Burada Yatıyor Balin", "Balin Fundinul", "Balin Lordu Moria"],
+    correct: 2,
+    category: "Detaylar",
+    difficulty: "medium",
+  },
+  {
+    question: "Faramir ve Boromir'in babası kimdir?",
+    options: ["Aragorn", "Denethor", "Theoden", "Elrond"],
+    correct: 1,
+    category: "Karakterler",
+    difficulty: "medium",
+  },
+  {
+    question: "Rohan süvarilerine ne denir?",
+    options: ["Eorlingas", "Rohirrim", "Dúnedain", "Eldar"],
+    correct: 1,
+    category: "Kültür",
+    difficulty: "medium",
+  },
+  {
+    question: "Entlerin toplandığı yerin adı nedir?",
+    options: ["Fangorn", "Entwood", "Wellinghall", "Derndingle"],
+    correct: 3,
+    category: "Yerler",
+    difficulty: "medium",
+  },
+  {
+    question: "Mithril'in diğer adı nedir?",
+    options: ["Elf gümüşü", "Gerçek gümüş", "Moria gümüşü", "Cüce altını"],
+    correct: 1,
+    category: "Eşyalar",
+    difficulty: "medium",
+  },
+  {
+    question: "Gondor'un beyaz ağacının türü nedir?",
+    options: ["Meşe", "Çam", "Nimloth", "Mallorn"],
+    correct: 2,
+    category: "Detaylar",
+    difficulty: "medium",
+  },
+  {
+    question: "Elrond'un kızının adı nedir?",
+    options: ["Galadriel", "Arwen", "Eowyn", "Luthien"],
+    correct: 1,
+    category: "Karakterler",
+    difficulty: "medium",
+  },
+  {
+    question: "Hangi karakter 'Korkak hobbit' diye anılır?",
+    options: ["Frodo", "Sam", "Merry", "Pippin"],
+    correct: 3,
+    category: "Karakterler",
+    difficulty: "medium",
+  },
+];
+
+// 🔮 ZOR SEVİYE (15 Soru) - Silmarillion uzmanları için
 const hardQuestions = [
   {
-    question: "Elrond'un babası kimdir?",
-    options: ["Gil-galad", "Eärendil", "Thranduil", "Celeborn"],
+    question: "Fëanor'un yarattığı mücevherlerin adı nedir?",
+    options: ["Arkenstones", "Silmarils", "Palantíri", "Nauglamír"],
     correct: 1,
-    category: "Aile Ağacı",
+    category: "Silmarillion",
     difficulty: "hard",
   },
   {
-    question: "Galadriel'in Valinor'daki adı nedir?",
-    options: ["Artanis", "Altáriel", "Nerwen", "Hepsı"],
-    correct: 0,
-    category: "Elvish İsimleri",
-    difficulty: "hard",
-  },
-  {
-    question: "Tom Bombadil'in Hobbitler tarafından verilen adı nedir?",
-    options: ["Orald", "Forn", "Iarwain Ben-adar", "Master"],
-    correct: 0,
-    category: "Eski Çağlar",
-    difficulty: "hard",
-  },
-  {
-    question: "Moria'nın gerçek adı nedir?",
-    options: ["Khazad-dûm", "Erebor", "Iron Hills", "Blue Mountains"],
-    correct: 0,
-    category: "Cüce Şehirleri",
-    difficulty: "hard",
-  },
-  {
-    question: "Smaug'un lakabı nedir?",
-    options: [
-      "The Terrible",
-      "The Mighty",
-      "The Chiefest and Greatest of Calamities",
-      "The Golden",
-    ],
-    correct: 2,
-    category: "Ejderha Bilgisi",
-    difficulty: "hard",
-  },
-  {
-    question: "Barad-dûr kaç yılda inşa edilmiştir?",
-    options: ["600 yıl", "1600 yıl", "SA 1000-1600", "TA 2000-2600"],
-    correct: 2,
-    category: "Zaman Çizelgesi",
-    difficulty: "hard",
-  },
-  {
-    question: "Silmarillerin sayısı kaçtır?",
-    options: ["1", "3", "7", "9"],
-    correct: 1,
-    category: "Efsanevi Eşyalar",
-    difficulty: "hard",
-  },
-  {
-    question: "Unfinished Tales'te bahsedilen Aldarion'un babası kimdir?",
-    options: ["Tar-Meneldur", "Tar-Elendil", "Tar-Amandil", "Tar-Súrion"],
-    correct: 0,
-    category: "Númenor Tarihi",
-    difficulty: "hard",
-  },
-  {
-    question: "Morgoth'un gerçek adı nedir?",
-    options: ["Sauron", "Melkor", "Ancalagon", "Gothmog"],
+    question: "Morgoth'un orijinal adı nedir?",
+    options: ["Sauron", "Melkor", "Gothmog", "Ungoliant"],
     correct: 1,
     category: "Valar",
     difficulty: "hard",
   },
   {
-    question: "Ent-eşlerinin kaderi nedir?",
-    options: [
-      "Öldürüldüler",
-      "Kayıp gittiler",
-      "Doğu'ya göç ettiler",
-      "Bilinmiyor",
-    ],
-    correct: 3,
-    category: "Ent Tarihi",
-    difficulty: "hard",
-  },
-  {
-    question: "Telperion ve Laurelin nelerdir?",
-    options: ["İki Ağaç", "İki Kule", "İki Yıldız", "İki Gemi"],
+    question: "Numenor'un batışına verilen isim nedir?",
+    options: ["Akallabêth", "Dagor Bragollach", "Nírnaeth", "War of Wrath"],
     correct: 0,
-    category: "Valinor",
+    category: "İkinci Çağ",
     difficulty: "hard",
   },
   {
-    question: "Celebrimbor kimdir?",
-    options: [
-      "Galadriel'in oğlu",
-      "Fëanor'un torunu",
-      "Gil-galad'ın kardeşi",
-      "Elrond'un babası",
-    ],
+    question: "Celebrimbor'un büyükbabası kimdir?",
+    options: ["Finwë", "Fëanor", "Thingol", "Gil-galad"],
     correct: 1,
-    category: "Elvish Soyları",
+    category: "Elf Soyları",
     difficulty: "hard",
   },
   {
-    question: "Mithril'in Westron karşılığı nedir?",
-    options: ["True Silver", "Moria Silver", "Moon Silver", "Star Silver"],
-    correct: 0,
-    category: "Malzemeler",
-    difficulty: "hard",
-  },
-  {
-    question: "Beorn hangi dilde konuşur?",
-    options: ["Westron", "Rohirric", "Kendi dili", "Sindarin"],
+    question: "Húrin'in Turgon'a söylediği ünlü söz nedir?",
+    options: ["A Elbereth Gilthoniel", "Aure entuluva!", "Şimdi görebilirsin", "Utúlie'n aurë!"],
     correct: 2,
-    category: "Dil Bilgisi",
+    category: "Beleriand",
     difficulty: "hard",
   },
   {
-    question: "Durin'in Bane'i nedir?",
-    options: ["Smaug", "Balrog", "Azog", "Bolg"],
+    question: "Beren ile Lúthien'in soyundan gelen karakter kimdir?",
+    options: ["Aragorn", "Frodo", "Gandalf", "Sauron"],
+    correct: 0,
+    category: "Soy Ağacı",
+    difficulty: "hard",
+  },
+  {
+    question: "Grond çekicinin anlamı nedir?",
+    options: ["Öfke", "Yıkım", "Karanlık", "Zincir"],
     correct: 1,
-    category: "Moria Tarihi",
+    category: "Beleriand",
+    difficulty: "hard",
+  },
+  {
+    question: "Fëanor'un yeminini bozan tek oğlu kimdir?",
+    options: ["Maedhros", "Maglor", "Caranthir", "Amrod"],
+    correct: 3,
+    category: "Silmarillion",
+    difficulty: "hard",
+  },
+  {
+    question: "Beren'in Lúthien'den önceki sevgilisinin adı nedir?",
+    options: ["Adanel", "Andreth", "Aredhel", "Yoktu"],
+    correct: 0,
+    category: "Birinci Çağ",
+    difficulty: "hard",
+  },
+  {
+    question: "Numenor'da 'Tar-' ön eki neyi ifade eder?",
+    options: ["Kraliçe", "Kral", "Bilge", "Denizci"],
+    correct: 1,
+    category: "İkinci Çağ",
+    difficulty: "hard",
+  },
+  {
+    question: "Celebrimbor'un yaptığı 3 Elf Yüzüğü'nün adları nedir?",
+    options: ["Narya, Nenya, Vilya", "Vilya, Nenya, Thilya", "Naryo, Neno, Vilyo", "Ataç, Yüzük, Kolye"],
+    correct: 0,
+    category: "Yüzükler",
+    difficulty: "hard",
+  },
+  {
+    question: "Khazad-dûm'ün kapısındaki yazıda hangi dil YOKTUR?",
+    options: ["Sindarin", "Khuzdul", "Quenya", "İngilizce"],
+    correct: 2,
+    category: "Diller",
+    difficulty: "hard",
+  },
+  {
+    question: "Quenya'da 'yıldız'ın karşılığı nedir?",
+    options: ["Elen", "Elda", "Isil", "Anar"],
+    correct: 0,
+    category: "Diller",
+    difficulty: "hard",
+  },
+  {
+    question: "Tom Bombadil'in Tolkien'in mektubundaki tanımı nedir?",
+    options: ["Doğanın ruhu", "Arda'nın unutulmuş bir Vala'sı", "Kasıtlı olarak bir gizem", "Eru Ilúvatar'ın tezahürü"],
+    correct: 2,
+    category: "Mysteries",
+    difficulty: "hard",
+  },
+  {
+    question: "Cücelerin 'Mahal' dediği Vala kimdir?",
+    options: ["Manwë", "Aulë", "Oromë", "Tulkas"],
+    correct: 1,
+    category: "Valar",
     difficulty: "hard",
   },
 ];
-
-// Tüm soruları birleştir
-const allQuestions = [...easyQuestions, ...hardQuestions];
 
 // Quiz State
 let currentQuiz = {
@@ -242,19 +363,21 @@ function shuffleArray(array) {
   return newArray;
 }
 
-function getRandomQuestions(count = 10, difficulty = "mixed") {
+function getRandomQuestions(count = 10, difficulty = "easy") {
   let questionPool = [];
 
   switch (difficulty) {
     case "easy":
       questionPool = easyQuestions;
       break;
+    case "medium":
+      questionPool = mediumQuestions;
+      break;
     case "hard":
       questionPool = hardQuestions;
       break;
-    case "mixed":
     default:
-      questionPool = allQuestions;
+      questionPool = easyQuestions;
       break;
   }
 
@@ -449,6 +572,7 @@ function createQuizHTML() {
   const difficultyTitle = {
     easy: "🍃 Hobbit Seviyesi",
     hard: "⚔️ Ranger Seviyesi",
+    extreme: "🔥 Extreme Seviyesi",
     mixed: "🧙‍♂️ Wizard Seviyesi",
   };
 
@@ -936,11 +1060,13 @@ function createHistoryHTML() {
       const difficultyIcon = {
         easy: "🍃",
         hard: "⚔️",
+        extreme: "🔥",
         mixed: "🧙‍♂️",
       };
       const difficultyName = {
         easy: "Hobbit",
         hard: "Ranger",
+        extreme: "Extreme",
         mixed: "Wizard",
       };
 
@@ -1012,12 +1138,13 @@ function shareOnTwitter(percentage, character, difficulty) {
   const difficultyText = {
     easy: "Hobbit",
     hard: "Ranger",
+    extreme: "Extreme",
     mixed: "Wizard",
   };
 
   const text = `Lord of the Rings Quiz'de %${percentage} puan aldım! Benim karakterim: ${character} 🧙‍♂️ ${
     difficultyText[difficulty] || "Wizard"
-  } seviyesinde! Sen de dene: @mommy__ai`;
+  } seviyesinde! Sen de dene: https://twitter.com/@mommy__ai`;
   const url = window.location.href;
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     text
@@ -1030,12 +1157,13 @@ function copyResultToClipboard(percentage, character, difficulty) {
   const difficultyText = {
     easy: "Hobbit",
     hard: "Ranger",
+    extreme: "Extreme",
     mixed: "Wizard",
   };
 
   const text = `Lord of the Rings Quiz'de %${percentage} puan aldım! Benim karakterim: ${character} 🧙‍♂️ ${
     difficultyText[difficulty] || "Wizard"
-  } seviyesinde! Sen de dene: ${window.location.href} @mommy__ai`;
+  } seviyesinde! Sen de dene: ${window.location.href} https://twitter.com/@mommy__ai`;
 
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard

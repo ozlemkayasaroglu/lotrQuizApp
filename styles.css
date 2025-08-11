@@ -198,14 +198,14 @@ body {
     box-shadow: 0 5px 20px rgba(76, 175, 80, 0.3);
 }
 
+.difficulty-button.medium:hover {
+    border-color: rgba(255, 152, 0, 0.7);
+    box-shadow: 0 5px 20px rgba(255, 152, 0, 0.3);
+}
+
 .difficulty-button.hard:hover {
     border-color: rgba(244, 67, 54, 0.7);
     box-shadow: 0 5px 20px rgba(244, 67, 54, 0.3);
-}
-
-.difficulty-button.mixed:hover {
-    border-color: rgba(212, 175, 55, 0.7);
-    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
 }
 
 .difficulty-icon {
