@@ -93,7 +93,7 @@ const hardQuestions = [
   {
     question: "Galadriel'in Valinor'daki adı nedir?",
     options: ["Artanis", "Altáriel", "Nerwen", "Hepsı"],
-    correct: 3,
+    correct: 0,
     category: "Elvish İsimleri",
     difficulty: "hard",
   },
